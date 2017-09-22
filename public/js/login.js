@@ -1,0 +1,27 @@
+define(['jquery','cookie'],function($){
+  $('#loginBtn').click(function(){
+
+                $.ajax({
+                   type:'post',
+                   url:'/api/login',
+                   data:$('#loginForm').serialize(),
+
+                   dataType:'json',
+                   success:function(data){
+                          // console.log(data);
+                        if(data.code ==200){
+                         // 登录成功，跳转到主页面
+                         $.cookie('loginInfo',JSON.stringify(data.result),{path:'/'});
+                         location.href = '/main/index';
+
+                         console.log("成功")
+
+                        }
+                   }
+                });
+                       
+
+                return false;//阻止默认提交表单
+        });
+})
+
