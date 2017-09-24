@@ -21,7 +21,7 @@ define(['jquery','template','cookie'],function($,template){
   });
 
 var flag=$.cookie('PHPSESSID');
-console.log(location.pathname);
+// console.log(location.pathname);
 if (!flag&&location.pathname!='/main/login') {
   location.href='/main/login';
 }

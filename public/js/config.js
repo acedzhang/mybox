@@ -4,7 +4,15 @@ require.config({
   jquery:'jquery/jquery',
   cookie:'jquery-cookie/jquery.cookie',
   template:'artTemplate/template-web',
+   bootstrap : 'bootstrap/js/bootstrap.min',
+   language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
   common:'../js/common',
-  login:'../js/login'
+  login:'../js/login',
+  teacherlist:'../js/teacher-list'
+},
+shim: {
+    bootstrap:{
+      deps:['jquery']
+    }
 }
 });
